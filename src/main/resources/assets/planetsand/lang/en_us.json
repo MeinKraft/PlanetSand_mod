@@ -1,0 +1,13 @@
+{
+  "itemGroup.planetsand": "Planet Sand",
+
+  "item.planetsand.tiny_coal": "Tiny Coal",
+  "item.planetsand.tiny_charcoal": "Tiny Charcoal",
+  "block.planetsand.charcoal_block": "Charcoal Block",
+
+  "item.planetsand.golden_steak": "Golden Steak",
+  "tip.planetsand.golden_steak": "The steak that never dies",
+
+  "item.planetsand.golden_fish": "Golden Fish",
+  "tip.planetsand.golden_fish": "A gold fish"
+}
