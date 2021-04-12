@@ -7,11 +7,14 @@ import net.minecraftforge.common.ToolType;
 
 public class BlockCharcoal extends Block {
     public BlockCharcoal() {
-        super(Block.Properties.create(Material.ROCK)
-            .hardnessAndResistance(5.0f, 6.0f)
+        super(Block.Properties.of(Material.STONE)
+            //.hardnessAndResistance(5.0f, 6.0f)
+            .strength(5.0f, 6.0f)
             .sound(SoundType.STONE)
             .harvestLevel(0)
             .harvestTool(ToolType.PICKAXE)
-            .setRequiresTool());
+            .requiresCorrectToolForDrops()
+            //.setRequiresTool()
+        );
     }
 }

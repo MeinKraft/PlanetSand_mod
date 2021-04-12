@@ -19,11 +19,11 @@ import java.util.List;
 public class GoldenSteak extends Item {
     public GoldenSteak() {
         super(new Properties()
-            .group(PlanetSand.TAB)
-            .maxStackSize(1)
+            .tab(PlanetSand.TAB)
+            .stacksTo(1)
             .food(new Food.Builder()
-                .hunger(8)
-                .saturation(0.8f)
+                .nutrition(8)
+                .saturationMod(0.8f)
                 .meat()
                 .build())
     ); }
@@ -33,18 +33,18 @@ public class GoldenSteak extends Item {
 
     @OnlyIn(Dist.CLIENT)
     @Override
-    public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new TranslationTextComponent("tip." + PlanetSand.MOD_ID + ".golden_steak").mergeStyle(TextFormatting.YELLOW));
+    public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+        tooltip.add(new TranslationTextComponent("tip." + PlanetSand.MOD_ID + ".golden_steak").withStyle(TextFormatting.YELLOW));
 
-        super.addInformation(stack, worldIn, tooltip, flagIn);
+        super.appendHoverText(stack, worldIn, tooltip, flagIn);
     }
 
     @Override
-    public ItemStack onItemUseFinish(ItemStack stack, World worldIn, LivingEntity entityLiving) {
-        super.onItemUseFinish(stack.copy(), worldIn, entityLiving);
+    public ItemStack finishUsingItem(ItemStack stack, World worldIn, LivingEntity entityLiving) {
+        super.finishUsingItem(stack.copy(), worldIn, entityLiving);
 
         if (entityLiving instanceof PlayerEntity)
-            ((PlayerEntity) entityLiving).getCooldownTracker().setCooldown(this, 20 * 60);
+            ((PlayerEntity) entityLiving).getCooldowns().addCooldown(this, 1200);  // 1min
 
         return stack;
     }

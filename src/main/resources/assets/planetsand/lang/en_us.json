@@ -9,5 +9,25 @@
   "tip.planetsand.golden_steak": "The steak that never dies",
 
   "item.planetsand.golden_fish": "Golden Fish",
-  "tip.planetsand.golden_fish": "A gold fish"
+  "tip.planetsand.golden_fish": "A gold fish",
+
+  "tip.planetsand.moonnosleep": "Can't sleep during a Full Moon",
+  "tip.planetsand.moonnotp": "Can't teleport during a Full Moon",
+
+  "item.planetsand.cooked_apple": "Cooked Apple",
+  "item.planetsand.plant_meal": "Plant Meal",
+
+  "item.planetsand.compass_mineshaft": "Mineshaft Compass",
+  "tip.planetsand.found": "Found structure",
+  "tip.planetsand.notfound": "No structure found nearby",
+  "tip.planetsand.searching": "Searching...",
+
+  "item.minecraft.potion.effect.death": "Potion of Death",
+  "item.minecraft.splash_potion.effect.death": "Splash Potion of Death",
+  "item.minecraft.tipped_arrow.effect.death": "Arrow of Death",
+  "item.minecraft.lingering_potion.effect.death": "Lingering Potion of Death",
+  "effect.planetsand.death": "Death",
+
+  "planetsand.subtitle.death": "Death Sound",
+  "planetsand.subtitle.respawn": "Respawn Sound"
 }

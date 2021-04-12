@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class ItemTinyCoal extends Item {
-    public ItemTinyCoal() { super(new Item.Properties().group(PlanetSand.TAB)); }
+    public ItemTinyCoal() { super(new Item.Properties().tab(PlanetSand.TAB)); }
 
     @Override
     public int getBurnTime(ItemStack itemStack) { return 200; }

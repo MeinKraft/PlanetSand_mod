@@ -1,10 +1,16 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/planet-sand-mod",
   "promos": {
-    "1.16.4-latest": "1.0.0",
-    "1.16.4-recommended": "1.0.0"
+    "1.16.5-latest": "1.2.3",
+    "1.16.5-recommended": "1.2.3"
   },
   "1.16.4": {
-    "1.0.0": "Initial Release"
+    "1.0.0": "Initial Release",
+    "1.0.1": "Config defaults changed. Added mob spawn distance. Code cleanup",
+    "1.1.2": "Added Mineshaft Compass. Fixed spawn timer. Implemented dawn kill. Added Plant Meal",
+    "1.1.3": "PlantMeal better handles plants. Mob spawn code cleanup"
+  },
+  "1.16.5": {
+    "1.2.3": "Official Mappings: MC 1.16.5, Forge 36.1.2. Updated Gradle 6.8.1"
   }
 }

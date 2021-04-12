@@ -17,7 +17,16 @@ public class ConfigBuilder {
     public ForgeConfigSpec.BooleanValue infiniteWater;
     public ForgeConfigSpec.BooleanValue infiniteLava;
     public ForgeConfigSpec.BooleanValue infiniteFluids;
-    public ForgeConfigSpec.IntValue moreHusks;
+
+    public ForgeConfigSpec.BooleanValue dragonEggDrops;
+    public ForgeConfigSpec.BooleanValue dragonXpDrops;
+
+    public ForgeConfigSpec.BooleanValue moonSpawns;
+    public ForgeConfigSpec.IntValue moonDistance;
+    public ForgeConfigSpec.BooleanValue moonSpawnsKill;
+    public ForgeConfigSpec.BooleanValue moonSleeping;
+    public ForgeConfigSpec.BooleanValue moonBedSplosion;
+    public ForgeConfigSpec.BooleanValue moonTeleporting;
 
     public ConfigBuilder() {
         ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
@@ -26,14 +35,15 @@ public class ConfigBuilder {
         builder.push("Natural Spawns");
 
 // TODO: Can't seem to detect villagers/golems/animals when they are spawned in villages !
-// have a work-a-round in place
+//       have a work-a-round in place
+
         enableVillagers = builder
-            .comment("Should Villagers be allowed to spawn?  WIP!!")
+            .comment("Should Villagers be allowed to spawn?")
             .define("enableVillagers", false);
 
         enableTraders = builder
-                .comment("Should Wandering Traders be allowed to spawn?  WIP!!")
-                .define("enableTraders", false);
+            .comment("Should Wandering Traders be allowed to spawn?")
+            .define("enableTraders", false);
 
         enableBats = builder
             .comment("Should Bats be allowed to spawn?")
@@ -70,17 +80,52 @@ public class ConfigBuilder {
             .define("infiniteWater", false);
 
         infiniteLava = builder
-                .comment("Allow infinite Lava source blocks?  Default: false")
-                .define("infiniteLava", false);
+            .comment("Allow infinite Lava source blocks?  Default: false")
+            .define("infiniteLava", false);
 
         infiniteFluids = builder
-                .comment("Allow other infinite fluid source blocks?  Default: false")
-                .define("infiniteFluids", false);
-
-        moreHusks = builder
-                .comment("Chance for Zombies to be spawned as Husks?  Default: 10")
-                .defineInRange("moreHusks", 10,0,100);
+            .comment("Allow other infinite fluid source blocks?  Default: false")
+            .define("infiniteFluids", false);
         builder.pop();
+
+
+        builder.push("Full Moon");
+        moonSpawns = builder
+            .comment("Increased mob spawns during full moons?  Default: true")
+            .define("moonSpawns", true);
+
+        moonDistance = builder
+            .comment("Closest full moon mobs can spawn to player?  Default: 8 blocks")
+            .defineInRange("moonDistance", 8,2,16);
+
+        moonSpawnsKill = builder
+            .comment("Mobs spawned during full moon die at Dawn?  Default: true  WIP!!")
+            .define("moonSpawnsKill", true);
+
+        moonSleeping = builder
+            .comment("Allow sleeping during full moons?  Default: false")
+            .define("moonSleeping", false);
+
+        moonBedSplosion = builder
+            .comment("Full moons cause beds to explode when trying to sleep?  Only Joking!?  Default: true")
+            .define("moonBedSplosion", true);
+
+        moonTeleporting = builder
+            .comment("Allow teleporting from the Overworld during full moons?  Default: false")
+            .define("moonTeleporting", false);
+        builder.pop();
+
+
+        builder.push("Dragons");
+        dragonEggDrops = builder
+            .comment("Every Dragon drops a Dragon Egg?  Default: true")
+            .define("dragonEggDrops", true);
+
+        dragonXpDrops = builder
+            .comment("Every Dragon drops full xp?  Default: true")
+            .define("dragonXPDrops", true);
+        builder.pop();
+
 
         COMMON = builder.build();
     }

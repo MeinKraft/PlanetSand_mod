@@ -1,0 +1,22 @@
+{
+	"player.death": {
+		"category": "players",
+		"subtitle": "planetsand.subtitle.death",
+		"sounds": [
+			{
+				"name": "planetsand:player.death",
+				"stream": true
+			}
+		]
+	},
+	"player.respawn": {
+		"category": "players",
+		"subtitle": "planetsand.subtitle.respawn",
+		"sounds": [
+			{
+				"name": "planetsand:player.respawn",
+				"stream": true
+			}
+		]
+	}
+}
