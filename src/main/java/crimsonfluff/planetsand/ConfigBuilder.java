@@ -17,6 +17,7 @@ public class ConfigBuilder {
     public ForgeConfigSpec.BooleanValue infiniteWater;
     public ForgeConfigSpec.BooleanValue infiniteLava;
     public ForgeConfigSpec.BooleanValue infiniteFluids;
+    public ForgeConfigSpec.BooleanValue plantmealBreaksCrops;
 
     public ForgeConfigSpec.BooleanValue dragonEggDrops;
     public ForgeConfigSpec.BooleanValue dragonXpDrops;
@@ -86,6 +87,10 @@ public class ConfigBuilder {
         infiniteFluids = builder
             .comment("Allow other infinite fluid source blocks?  Default: false")
             .define("infiniteFluids", false);
+
+        plantmealBreaksCrops = builder
+            .comment("Allow PlantMeal to break and replant crops?  Default: true")
+            .define("plantmealBreaksCrops", true);
         builder.pop();
 
 

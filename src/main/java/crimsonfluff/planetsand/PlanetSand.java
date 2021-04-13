@@ -61,10 +61,9 @@ import java.util.Set;
 
 @Mod(PlanetSand.MOD_ID)
 public class PlanetSand {
-    private final ConfigBuilder CONFIGURATION = new ConfigBuilder();
-
     public static final String MOD_ID = "planetsand";
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
+    public static final ConfigBuilder CONFIGURATION = new ConfigBuilder();
     final IEventBus MOD_EVENTBUS = FMLJavaModLoadingContext.get().getModEventBus();
 
     public int tickPlayer;
@@ -94,7 +93,6 @@ public class PlanetSand {
     public void onCommandsRegister(RegisterCommandsEvent event) { new MoonCommands(event.getDispatcher()); }
 
 
-    // TODO: Maybe if can seek sky then take exhaustion, so basically if outside?
     // TODO: No exhaustion if in water?
     @SubscribeEvent
     public void onPlayerTickHandler(TickEvent.PlayerTickEvent event) {
@@ -111,7 +109,7 @@ public class PlanetSand {
 
                 if (CONFIGURATION.exhDesert.get() != 0) {
                     if (worldIn.dimension() == World.OVERWORLD) {
-                        if (worldIn.isDay()) {
+                        if (worldIn.isDay() && !playerIn.isInWater()) {
                             // Temperature(): >1 savanna, > 2 Hot,
                             if (worldIn.getBiome(playerIn.blockPosition()).getTemperature(playerIn.blockPosition()) >= 2.0f)
                                 playerIn.getFoodData().addExhaustion(CONFIGURATION.exhDesert.get() / 10f);
