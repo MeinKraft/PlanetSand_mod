@@ -110,11 +110,11 @@ public class PlantMeal extends Item {
                 //MathHelper.nextInt(p_185529_1_.random, 2, 5);  // CropBlocks.getBonemealAgeIncrease
                 if (age < max) {
                     int r = MathHelper.nextInt(worldIn.random, 1, 3);
-                    if (age+r>max) r=max-age;
+                    if (age + r > max) r = max - age;
                     //context.getPlayer().sendMessage(new StringTextComponent("PlantMeal: AGE Increase: " + r), Util.NIL_UUID);
 
                     for (int a = 0; a < r; a++)
-                        state = state.cycle(property);
+                        state = state.cycle(property);              // before official mappings -> state.func_235896_a_(property)
                     worldIn.setBlockAndUpdate(pos, state);
 
                 } else {
